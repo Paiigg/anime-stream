@@ -8,7 +8,8 @@ type Params = {
 
 async function getDetail({ params }: { params: Params }) {
   const res = await fetch(
-    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/anime/${params.slug}`
+    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/anime/${params.slug}`,
+    { cache: "no-store" }
   );
   const data = await res.json();
 
@@ -22,11 +23,11 @@ export default async function Detail({ params }: { params: Params }) {
       <h3 className="text-2xl font-bold">{detail.title}</h3>
       <span className="text-xs text-yellow-400">{detail.japanese_title}</span>
       <div className="flex flex-col items-start justify-between lg:flex-row">
-        <div className="flex flex-col gap-6 lg:flex-row">
-          <div className="flex justify-center lg:block">
+        <div className="flex flex-col items-center gap-6 lg:flex-row">
+          <div className="flex justify-center lg:block ">
             <Image
               src={detail.poster}
-              width={300}
+              width={1000}
               height={100}
               alt="poster"
               className="rounded-lg"
@@ -62,13 +63,13 @@ export default async function Detail({ params }: { params: Params }) {
               </div>
             </div>
             <h3>Synopsis :</h3>
-            <p className="text-xs  text-zinc-500 w-[350px] lg:w-p=[500px] ">
+            <p className="text-xs text-zinc-500 lg:w-[90%] ">
               {detail.synopsis}
             </p>
           </div>
         </div>
-        <EpisodeList episode={detail.episode_lists} />
       </div>
+      <EpisodeList episode={detail.episode_lists} />
     </div>
   );
 }

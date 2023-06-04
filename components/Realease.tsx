@@ -23,7 +23,7 @@ export default function Realease({ anime }: { anime: any }) {
                 alt="poster"
                 className="rounded-lg mix-blend-overlay"
               />
-              <p className="absolute text-xs font-semibold bottom-3 left-[50%] translate-x-[-50%] w-[60px]">
+              <p className="absolute text-xs font-semibold bottom-3 left-3 lg:left-[50%] lg:translate-x-[-50%] ">
                 {data.current_episode}
               </p>
             </div>

@@ -1,10 +1,13 @@
 import Image from "next/image";
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import banner from "@/public/banner.png";
 import Realease from "@/components/Realease";
+import { useEffect, useState } from "react";
 
 async function getAnime() {
   const res = await fetch(
-    "https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/home"
+    "https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/home",
+    { cache: "no-store" }
   );
   const data = await res.json();
 
