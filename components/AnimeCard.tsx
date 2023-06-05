@@ -4,11 +4,17 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-export default function Realease({ anime }: { anime: any }) {
+export default function Realease({
+  anime,
+  title,
+}: {
+  anime: any;
+  title: string;
+}) {
   const router = useRouter();
   return (
     <div className="px-4 mt-10 lg:px-0">
-      <h3 className="text-2xl font-semibold">New Release</h3>
+      <h3 className="text-2xl font-semibold">{title}</h3>
       <div className="grid content-center grid-cols-3 gap-4 mt-4 lg:grid-cols-6">
         {anime.map((data: any) => (
           <div
@@ -27,7 +33,7 @@ export default function Realease({ anime }: { anime: any }) {
                 {data.current_episode}
               </p>
             </div>
-            <p className="py-2 text-xs lg:text-center lg:text-base">
+            <p className="py-2 text-xs truncate lg:text-center lg:text-base">
               {data.title}
             </p>
           </div>

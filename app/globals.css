@@ -4,8 +4,9 @@
 
 html {
   font-family: var(--font-poppins);
+  @apply scrollbar-hide;
 }
 
 body {
-  @apply bg-[#192026] text-white;
+  @apply bg-[#16161a] text-white;
 }

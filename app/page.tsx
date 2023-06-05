@@ -1,8 +1,7 @@
 import Image from "next/image";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import banner from "@/public/banner.png";
-import Realease from "@/components/Realease";
-import { useEffect, useState } from "react";
+import AnimeCard from "@/components/AnimeCard";
+import SearchBar from "@/components/SearchBar";
 
 async function getAnime() {
   const res = await fetch(
@@ -24,11 +23,7 @@ export default async function Home() {
         <p className="text-sm text-gray-400">
           What are you gonna watch today ?
         </p>
-        <input
-          type="text"
-          placeholder="Search a anime"
-          className="py-2 px-4 bg-[#374151] focus:outline-none w-full rounded-full mt-4 lg:hidden"
-        />
+        <SearchBar props={"lg:hidden block my-4"} />
         <Image
           src={banner}
           width={1170}
@@ -37,7 +32,7 @@ export default async function Home() {
           className="mt-5 "
         />
       </div>
-      <Realease anime={anime} />
+      <AnimeCard anime={anime} title={"New Release"} />
     </div>
   );
 }
