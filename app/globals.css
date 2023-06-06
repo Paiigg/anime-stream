@@ -4,7 +4,7 @@
 
 html {
   font-family: var(--font-poppins);
-  @apply scrollbar-hide;
+  @apply overflow-x-hidden scrollbar-hide;
 }
 
 body {

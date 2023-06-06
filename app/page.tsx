@@ -17,7 +17,7 @@ export default async function Home() {
   const anime = await getAnime();
 
   return (
-    <div className="max-w-[1170px] mx-auto">
+    <div className="max-w-[1170px] mx-auto mt-20">
       <div className="px-4 mt-10 lg:px-0">
         <h3 className="text-2xl font-semibold">Exlpore</h3>
         <p className="text-sm text-gray-400">
