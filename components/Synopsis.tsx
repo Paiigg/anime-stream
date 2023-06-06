@@ -29,7 +29,7 @@ export default function Synopsis({ synopsis }: { synopsis: string }) {
     });
   }, []);
   return (
-    <p className="text-xs text-zinc-500 w-[90%] line-clamp-5 transition duration-300 paragraph">
+    <p className="text-xs transition lg:w-[95%] duration-300 text-zinc-500 line-clamp-5 paragraph">
       {synopsis}
     </p>
   );

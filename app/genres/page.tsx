@@ -26,7 +26,7 @@ export default async function Genres() {
             >
               <Link
                 href={`/genres/${data.slug}`}
-                className="p-2 text-xl font-semibold text-center truncate"
+                className="p-2 text-xl font-semibold text-center truncate drop-shadow-lg shadow-black"
               >
                 {data.name}
               </Link>

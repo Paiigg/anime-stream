@@ -25,10 +25,10 @@ export default async function Detail({ params }: { params: Params }) {
       <div className="grid w-full grid-cols-1 lg:grid-cols-3">
         <div className="col-span-2">
           <h3 className="text-2xl font-bold">{detail.title}</h3>
-          <span className="text-xs text-yellow-400">
+          <span className="text-xs text-[#2cb67d]">
             {detail.japanese_title}
           </span>
-          <div className="flex flex-col items-start justify-between lg:flex-row">
+          <div className="flex flex-col items-start justify-between mt-4 lg:flex-row">
             <div className="grid grid-cols-1 lg:gap-10 lg:grid-cols-3">
               <Image
                 src={detail.poster}
