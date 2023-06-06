@@ -16,7 +16,7 @@ export default async function Genres() {
 
   const genres = await getGenres();
   return (
-    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 ">
+    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 mt-20">
       <div className="grid w-full grid-cols-3 gap-5 lg:grid-cols-6">
         {genres.map((data: any, i: any) => {
           return (
@@ -26,7 +26,7 @@ export default async function Genres() {
             >
               <Link
                 href={`/genres/${data.slug}`}
-                className="p-2 text-xl font-semibold text-center truncate drop-shadow-lg shadow-black"
+                className="p-2 text-xs font-semibold text-center truncate lg:text-xl drop-shadow-lg shadow-black"
               >
                 {data.name}
               </Link>

@@ -18,7 +18,7 @@ async function getSearch({ params }: { params: Params }) {
 export default async function Search({ params }: { params: Params }) {
   const search = await getSearch({ params });
   return (
-    <div className="max-w-[1170px] mx-auto px-4 lg:px-0">
+    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 mt-20">
       <AnimeCard anime={search} title={""} />
     </div>
   );
