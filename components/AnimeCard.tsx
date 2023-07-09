@@ -16,8 +16,9 @@ export default function Realease({
     <div className="px-4 mt-10 lg:px-0">
       <h3 className="text-2xl font-semibold">{title}</h3>
       <div className="grid content-center grid-cols-3 gap-4 mt-4 lg:grid-cols-6">
-        {anime.map((data: any) => (
+        {anime.map((data: any, i: any) => (
           <div
+            key={i}
             onClick={() => router.push(`detail/${data.slug}`)}
             className="cursor-pointer"
           >

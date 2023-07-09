@@ -7,12 +7,10 @@ type Params = {
 
 async function getGenre({ params }: { params: Params }) {
   const res = await fetch(
-    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/genres/${params.slug}`,
+    `https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/genres/${params.slug}`,
     { cache: "no-store" }
   );
   const data = await res.json();
-
-  console.log(data.data);
 
   return data.data.anime;
 }
@@ -20,7 +18,7 @@ async function getGenre({ params }: { params: Params }) {
 export default async function page({ params }: { params: Params }) {
   const genre = await getGenre({ params });
   return (
-    <div className="max-w-[1170px] mx-auto px-4 lg:px-0">
+    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 mt-20">
       <AnimeCard anime={genre} title={`${params.slug?.toUpperCase()}`} />
     </div>
   );

@@ -5,7 +5,7 @@ import SearchBar from "@/components/SearchBar";
 
 async function getAnime() {
   const res = await fetch(
-    "https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/home",
+    "https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/home",
     { cache: "no-store" }
   );
   const data = await res.json();

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getGenres() {
   const res = await fetch(
-    "https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/genres",
+    "https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/genres",
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -21,6 +21,7 @@ export default async function Genres() {
         {genres.map((data: any, i: any) => {
           return (
             <div
+              key={i}
               className="h-[100px]  rounded-xl flex items-center justify-center hover:scale-105 hover:shadow-xl"
               style={{ backgroundColor: `${color[i]}` }}
             >

@@ -10,7 +10,7 @@ type Params = {
 
 async function getDetail({ params }: { params: Params }) {
   const res = await fetch(
-    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/anime/${params.slug}`,
+    `https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/anime/${params.slug}`,
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -20,8 +20,9 @@ async function getDetail({ params }: { params: Params }) {
 
 export default async function Detail({ params }: { params: Params }) {
   const detail = await getDetail({ params });
+
   return (
-    <div className="max-w-[1170px] mx-auto px-4 lg:px-0">
+    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 mt-20">
       <div className="grid w-full grid-cols-1 lg:grid-cols-3">
         <div className="col-span-2">
           <h3 className="text-2xl font-bold">{detail.title}</h3>
@@ -84,8 +85,8 @@ export default async function Detail({ params }: { params: Params }) {
         <div className="w-full lg:block">
           <p className="my-4 text-xl font-semibold">Anime Recomendation</p>
           <div className="grid grid-cols-4 gap-4">
-            {detail.recommendations.map((data: any) => (
-              <Link href={`detail/${data.slug}`}>
+            {detail.recommendations.map((data: any, i: any) => (
+              <Link href={`detail/${data.slug}`} key={i}>
                 <Image
                   src={data.poster}
                   width={200}

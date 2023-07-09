@@ -7,7 +7,7 @@ type Params = {
 
 async function getSearch({ params }: { params: Params }) {
   const res = await fetch(
-    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/search/${params.keyword}`,
+    `https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/search/${params.keyword}`,
     { cache: "no-store" }
   );
   const data = await res.json();

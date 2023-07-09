@@ -7,7 +7,7 @@ type Params = {
 
 async function getVideo({ params }: { params: Params }) {
   const res = await fetch(
-    `https://otakudesu-unofficial-api.rzkfyn.tech/api/v1/episode/${params.slug}`,
+    `https://otakudesu-unofficial-api.rzkfyn.xyz/api/v1/episode/${params.slug}`,
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -17,7 +17,7 @@ async function getVideo({ params }: { params: Params }) {
 export default async function Play({ params }: { params: Params }) {
   const video = await getVideo({ params });
   return (
-    <div className="max-w-[1170px] mx-auto px-4 lg:px-0">
+    <div className="max-w-[1170px] mx-auto px-4 lg:px-0 mt-20">
       <h3 className="my-4 text-lg font-semibold lg:text-2xl">
         {video.episode}
       </h3>

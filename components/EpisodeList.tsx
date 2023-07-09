@@ -10,6 +10,7 @@ export default function EpisodeList({ episode }: { episode: any[] }) {
         <div className="flex flex-col w-full">
           {reversed.map((data, i) => (
             <Link
+              key={i}
               href={`play/${data.slug}`}
               className="bg-[#374151] rounded-full px-4 py-2 mb-4 text-sm w-full truncate"
             >
